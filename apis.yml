@@ -1,23 +1,60 @@
 aid: better-world
+
 name: Better World Books
-description: 'Better World Books is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Better World Books is an online retailer of new and used books, offering a wide selection of titles across genres. Founded with a mission to promote literacy and support communities, the company donates a portion of its proceeds to fund book donations worldwide. Their platform includes features such as rewards, gift certificates, and a robust search system, catering to readers looking for affordable books while contributing to charitable causes.'
+
 url: https://raw.githubusercontent.com/api-evangelist/better-world/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-28 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-28'
+
 modified: '2026-09-28'
+
 tags:
 - Company
-apis: []
+- Books
+- Retail
+- Literacy
+- E-commerce
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/better-world-hosts.yml
+- type: Vendors
+  url: vendors/better-world-vendors.yml
+- type: DomainSecurity
+  url: security/better-world-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/better-world_stock/
+  url: https://www.betterworldbooks.com
+
+apis: []
+
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: Cloudflare bot challenge prevented access to API spec URLs.
+  evidence:
+    - url: https://api.betterworldbooks.com/openapi.json
+      status: 403
+  checked: '2026-09-28'
+x-enrichment:
+  date: '2026-09-28'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
